@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main2.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/12 19:06:38 by csnowbal          #+#    #+#             */
+/*   Updated: 2020/05/12 19:06:41 by csnowbal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/ft_printf.h"
 #include <stdio.h>
 #include <limits.h>
@@ -78,18 +90,18 @@ int		main(void)
 	ft_printf("22) my       PRINTF : |%10s|\n", NULL);
 	printf("23) standart PRINTF : |%-10s|\n", NULL);
 	ft_printf("23) my       PRINTF : |%-10s|\n", NULL);
-	printf("24) standart PRINTF : |%.1s|\n", NULL);
-	ft_printf("24) my       PRINTF : |%.1s|\n", NULL);
+	printf("24) standart PRINTF : |%.1s|\n", "covid-19");
+	ft_printf("24) my       PRINTF : |%.1s|\n", "covid-19");
 	printf("25) standart PRINTF : |%10.8s|\n", NULL);
 	ft_printf("25) my       PRINTF : |%10.8s|\n", NULL);
-	printf("26) standart PRINTF : |%10.2s|\n", NULL);
-	ft_printf("26) my       PRINTF : |%10.2s|\n", NULL);
+	printf("26) standart PRINTF : |%10.2s|\n", "covid-19");
+	ft_printf("26) my       PRINTF : |%10.2s|\n", "covid-19");
 	printf("27) standart PRINTF : |%2.10s|\n", NULL);
 	ft_printf("27) my       PRINTF : |%2.10s|\n", NULL);
-	printf("28) standart PRINTF : |%2.5s|\n", NULL);
-	ft_printf("28) my       PRINTF : |%2.5s|\n", NULL);
-	printf("29) standart PRINTF : |%-10.2s|\n", NULL);
-	ft_printf("29) my       PRINTF : |%-10.2s|\n", NULL);
+	printf("28) standart PRINTF : |%2.5s|\n", "covid-19");
+	ft_printf("28) my       PRINTF : |%2.5s|\n", "covid-19");
+	printf("29) standart PRINTF : |%-10.2s|\n", "covid-19");
+	ft_printf("29) my       PRINTF : |%-10.2s|\n", "covid-19");
 	printf("30) standart PRINTF : |%1.0s|\n", NULL);
 	ft_printf("30) my       PRINTF : |%1.0s|\n", NULL);
 	printf("31) standart PRINTF : |%-1.s|\n", NULL);
@@ -121,21 +133,29 @@ int		main(void)
 	ft_printf("06) my       PRINTF : |%2p|\n", tab);
 	printf("07) standart PRINTF : |%-2p|\n", tab);
 	ft_printf("07) my       PRINTF : |%-2p|\n", tab);
-	printf("11) standart PRINTF : |%p|\n", "\0\0\0\0\0");
-	ft_printf("11) my       PRINTF : |%p|\n", "\0\0\0\0\0");
-	printf("12) standart PRINTF : |%20p|\n", "\0\0\0\0\0");
-	ft_printf("12) my       PRINTF : |%20p|\n", "\0\0\0\0\0");
-	printf("13) standart PRINTF : |%p|\n", "");
-	ft_printf("13) my       PRINTF : |%p|\n", "");
-	printf("14) standart PRINTF : |%p|\n", NULL);
-	ft_printf("14) my       PRINTF : |%p|\n", NULL);
-	printf("15) standart PRINTF : |%10p|\n", NULL);
-	ft_printf("15) my       PRINTF : |%10p|\n", NULL);
-	printf("16) standart PRINTF : |%-10p|\n", NULL);
-	ft_printf("16) my       PRINTF : |%-10p|\n", NULL);
+	printf("08) standart PRINTF : |%p|\n", "\0\0\0\0\0");
+	ft_printf("08) my       PRINTF : |%p|\n", "\0\0\0\0\0");
+	printf("09) standart PRINTF : |%20p|\n", "\0\0\0\0\0");
+	ft_printf("09) my       PRINTF : |%20p|\n", "\0\0\0\0\0");
+	printf("10) standart PRINTF : |%p|\n", "");
+	ft_printf("10) my       PRINTF : |%p|\n", "");
+	printf("11) standart PRINTF : |%p|\n", NULL);
+	ft_printf("11) my       PRINTF : |%p|\n", NULL);
+	printf("12) standart PRINTF : |%10p|\n", NULL);
+	ft_printf("12) my       PRINTF : |%10p|\n", NULL);
+	printf("13) standart PRINTF : |%-10p|\n", NULL);
+	ft_printf("13) my       PRINTF : |%-10p|\n", NULL);
+	printf("14) standart PRINTF : |%.1p|\n", NULL);
+	ft_printf("14) my       PRINTF : |%.1p|\n", NULL);
+	printf("15) standart PRINTF : |%10.2p|\n", NULL);
+	ft_printf("15) my       PRINTF : |%10.2p|\n", NULL);
+	printf("16) standart PRINTF : |%2.5p|\n", NULL);
+	ft_printf("16) my       PRINTF : |%2.5p|\n", NULL);
+	printf("17) standart PRINTF : |%-10.2p|\n", NULL);
+	ft_printf("17) my       PRINTF : |%-10.2p|\n", NULL);
 	free(tab);
 	free(tab2);
-	ft_printf("--------------------%%d-et-%%i--------------------\n");	//perfect
+	ft_printf("--------------------%%d----%%i--------------------\n");	//perfect
 	printf("01) standart PRINTF : |%d|\n", 42);
 	ft_printf("01) my       PRINTF : |%d|\n", 42);
 	printf("02) standart PRINTF : |%i|\n", 42);
@@ -325,78 +345,36 @@ int		main(void)
 	ft_printf("21) my       PRINTF : |%u|\n", UINT_MAX);
 	printf("22) standart PRINTF : |%u| |%u|\n", (unsigned int)-1, UINT_MAX + 1);
 	ft_printf("22) my       PRINTF : |%u| |%u|\n", (unsigned int)-1, UINT_MAX + 1);
+	ft_printf("--------------------%%--------------------\n");
+	printf("01) standart PRINTF : %5%\n");
+	ft_printf("01) my       PRINTF : %5%\n");
 
-	ft_printf("--------------------%%s--------------------\n");			//Perfect
-	printf("01) standart PRINTF : |%s|\n", "salut");
-	ft_printf("01) my       PRINTF : |%s|\n", "salut");
-	printf("02) standart PRINTF : |%-s|\n", "test");
-	ft_printf("02) my       PRINTF : |%-s|\n", "test");
-	printf("03) standart PRINTF : |%---------s|\n", "test2");
-	ft_printf("03) my       PRINTF : |%----------s|\n", "test2");
-	printf("04) standart PRINTF : |%10s|\n", "42");
-	ft_printf("04) my       PRINTF : |%10s|\n", "42");
-	printf("05) standart PRINTF : |%-10s|\n", "42");
-	ft_printf("05) my       PRINTF : |%-10s|\n", "42");
-	printf("06) standart PRINTF : |%2s|\n", "string");
-	ft_printf("06) my       PRINTF : |%2s|\n", "string");
-	printf("07) standart PRINTF : |%-2s|\n", "string");
-	ft_printf("07) my       PRINTF : |%-2s|\n", "string");
-	printf("08) standart PRINTF : |%.15s|\n", "precision");
-	ft_printf("08) my       PRINTF : |%.15s|\n", "precision");
-	printf("09) standart PRINTF : |%.4s|\n", "precision");
-	ft_printf("09) my       PRINTF : |%.4s|\n", "precision");
-	printf("10) standart PRINTF : |%.0s|\n", "precision");
-	ft_printf("10) my       PRINTF : |%.0s|\n", "precision");
-	printf("11) standart PRINTF : |%s|\n", "\0\0\0\0\0");
-	ft_printf("11) my       PRINTF : |%s|\n", "\0\0\0\0\0");
-	printf("12) standart PRINTF : |%10s|\n", "\0\0\0\0\0");
-	ft_printf("12) my       PRINTF : |%10s|\n", "\0\0\0\0\0");
-	printf("13) standart PRINTF : |%s|\n", "");
-	ft_printf("13) my       PRINTF : |%s|\n", "");
-	printf("14) standart PRINTF : |%-.2s|\n", "boom");
-	ft_printf("14) my       PRINTF : |%-.2s|\n", "boom");
-	printf("15) standart PRINTF : |%10.8s|\n", "google");
-	ft_printf("15) my       PRINTF : |%10.8s|\n", "google");
-	printf("16) standart PRINTF : |%10.2s|\n", "twitter");
-	ft_printf("16) my       PRINTF : |%10.2s|\n", "twitter");
-	printf("17) standart PRINTF : |%2.10s|\n", "samsung");
-	ft_printf("17) my       PRINTF : |%2.10s|\n", "samsung");
-	printf("18) standart PRINTF : |%2.5s|\n", "printf");
-	ft_printf("18) my       PRINTF : |%2.5s|\n", "printf");
-	printf("19) standart PRINTF : |%-10.2s|\n", "424242424242");
-	ft_printf("19) my       PRINTF : |%-10.2s|\n", "424242424242");
-	printf("20) standart PRINTF : |%1.0s|\n", "123456789");
-	ft_printf("20) my       PRINTF : |%1.0s|\n", "123456789");
-	printf("20) standart PRINTF : |%-1.0s|\n", "123456789");
-	ft_printf("20) my       PRINTF : |%-1.0s|\n", "123456789");
-	printf("21) standart PRINTF : |%s|\n", NULL);
-	ft_printf("21) my       PRINTF : |%s|\n", NULL);
-	printf("22) standart PRINTF : |%10s|\n", NULL);
-	ft_printf("22) my       PRINTF : |%10s|\n", NULL);
-	printf("23) standart PRINTF : |%-10s|\n", NULL);
-	ft_printf("23) my       PRINTF : |%-10s|\n\n", NULL);
+	printf("02) standart PRINTF : %-5%\n");
+	ft_printf("02) my       PRINTF : %-5%\n");
 
-	printf("24) standart PRINTF : |%1.1s|\n", NULL);
-	ft_printf("24) my       PRINTF : |%1.1s|\n", NULL);
+	printf("03) standart PRINTF : %.0%\n");
+	ft_printf("03) my       PRINTF : %.0%\n");
 
-	printf("25) standart PRINTF : |%10.8s|\n", NULL);
-	ft_printf("25) my       PRINTF : |%10.8s|\n", NULL);
+	printf("04) standart PRINTF : |");
+	printf("%Z");
+	printf("|\n");
+	ft_printf("04) my       PRINTF : |");
+	ft_printf("%Z");
+	ft_printf("|\n");
 
-	printf("26) standart PRINTF : |%10.2s|\n", NULL);
-	ft_printf("26) my       PRINTF : |%10.2s|\n", NULL);
+	printf("05) standart PRINTF : |");
+	printf("%");
+	printf("|\n");
+	ft_printf("05) my       PRINTF : |");
+	ft_printf("%");
+	ft_printf("|\n");
 
-	printf("27) standart PRINTF : |%2.10s|\n", NULL);
-	ft_printf("27) my       PRINTF : |%2.10s|\n", NULL);
-
-	printf("28) standart PRINTF : |%2.5s|\n", NULL);
-	ft_printf("28) my       PRINTF : |%2.5s|\n", NULL);
-
-	printf("29) standart PRINTF : |%-10.2s|\n", NULL);
-	ft_printf("29) my       PRINTF : |%-10.2s|\n", NULL);
-	printf("30) standart PRINTF : |%1.0s|\n", NULL);
-
-	ft_printf("30) my       PRINTF : |%1.0s|\n", NULL);
-	printf("31) standart PRINTF : |%-1.s|\n", NULL);
-	ft_printf("31) my       PRINTF : |%-1.s|\n", NULL);
+	printf("06) standart PRINTF : |");
+	printf("%%%");
+	printf("|\n");
+	ft_printf("06) my       PRINTF : |");
+	ft_printf("%%%");
+	ft_printf("|\n");
+			//doljno -1
 	return (0);
 }

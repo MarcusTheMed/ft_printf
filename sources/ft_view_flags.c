@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_view_flags.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/12 19:05:59 by csnowbal          #+#    #+#             */
+/*   Updated: 2020/05/12 19:06:00 by csnowbal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 t_flags	ft_flag_minus(t_flags flags)
@@ -11,7 +23,7 @@ t_flags	ft_flag_digit(char c, t_flags flags)
 {
 	if (flags.star == 1)
 		flags.width = 0;
-	flags.width = (flags.width * 10) + (c - '0');
+	flags.width = (flags.width * 10) + (c - 48);
 	return (flags);
 }
 
@@ -27,13 +39,9 @@ t_flags	ft_flag_width(va_list av, t_flags flags)
 	return (flags);
 }
 
-int		ft_flag_dot(const char *input, int start, t_flags *flags, va_list av)
+int		ft_flag_dot(const char *input, int i, t_flags *flags, va_list av)
 {
-	int	i;
-
-	i = start;
-	i++;
-	if (input[i] == '*')
+	if (input[++i] == '*')
 	{
 		flags->dot = va_arg(av, int);
 		i++;
@@ -42,7 +50,7 @@ int		ft_flag_dot(const char *input, int start, t_flags *flags, va_list av)
 	{
 		flags->dot = 0;
 		while (ft_isdigit(input[i]))
-			flags->dot = (flags->dot * 10) + (input[i++] - '0');
+			flags->dot = (flags->dot * 10) + (input[i++] - 48);
 	}
 	return (i);
 }

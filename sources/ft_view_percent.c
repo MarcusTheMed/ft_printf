@@ -1,11 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_view_percent.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/12 19:06:07 by csnowbal          #+#    #+#             */
+/*   Updated: 2020/05/12 19:06:09 by csnowbal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
-int	ft_view_percent(t_flags flags)
+int	ft_view_percent(void)
 {
-	if (flags.minus == 1)
-		ft_putstr("%", 1);
-	ft_view_width(flags.width, 1, flags.zero);
-	if (flags.minus == 0)
-		ft_putstr("%", 1);
-	return (0);
+	return (ft_putchar('%'));
 }
