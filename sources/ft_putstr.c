@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:05:48 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:52:43 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/12 21:40:50 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putstr(char *str, int len)
 {
-	int			count;
+	int	count;
 
 	count = 0;
 	while (str[count] && count < len)

@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:21 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:53:44 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/12 21:41:36 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int	ft_view(int c, t_flags flags, va_list av)
 	else if (c == 'X')
 		count += ft_view_hex(va_arg(av, unsigned int), 0, flags);
 	else if (c == '%')
-		count += ft_view_percent();
+		count += ft_putchar('%');
 	return (count);
 }

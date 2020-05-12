@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:12 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:54:44 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/12 22:01:10 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int			ft_view_str(char *str, t_flags flags)
 	int		count;
 
 	count = 0;
-	if (str == NULL)
+	if (!str)
 		str = "(null)";
 	len = ft_strlen(str);
 	str_1 = ft_substr(str, 0, len);

@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:10 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:55:03 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/12 21:58:04 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,7 @@ int			ft_view_ptr(unsigned long long nbr, t_flags flags)
 	if (!nbr)
 		ptr = ft_substr("(nil)", 0, 5);
 	else
-	{
-		ptr = ft_nbr_base(nbr, 16);
-		ptr = ft_str_tolower(ptr);
-	}
+		ptr = ft_str_tolower(ft_nbr_base(nbr, 16));
 	len = ft_strlen(ptr);
 	if ((size_t)flags.dot < len)
 		flags.dot = len;
