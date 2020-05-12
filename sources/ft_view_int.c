@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:03 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:06:06 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/12 19:55:17 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	ft_put_int(char *nbr_str, int nbr_tmp, t_flags flags)
 	return (count);
 }
 
-int		ft_view_int(int nbr, t_flags flags)
+int			ft_view_int(int nbr, t_flags flags)
 {
 	char	*nbr_str;
 	int		nbr_tmp;

@@ -6,16 +6,15 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:12 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:06:14 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/12 19:54:44 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/ft_printf.h"
 
 static int	ft_output_str(char *str, t_flags flags, size_t len)
 {
-	int			count;
+	int		count;
 
 	count = 0;
 	if (flags.dot >= 0)
@@ -28,7 +27,7 @@ static int	ft_output_str(char *str, t_flags flags, size_t len)
 	return (count);
 }
 
-int		ft_view_str(char *str, t_flags flags)
+int			ft_view_str(char *str, t_flags flags)
 {
 	size_t	len;
 	char	*str_1;
@@ -38,7 +37,7 @@ int		ft_view_str(char *str, t_flags flags)
 	if (str == NULL)
 		str = "(null)";
 	len = ft_strlen(str);
-	str_1 = ft_substr(str, 0 , len);
+	str_1 = ft_substr(str, 0, len);
 	if (flags.dot >= 0 && (size_t)flags.dot > len)
 		flags.dot = len;
 	if (flags.minus == 1)

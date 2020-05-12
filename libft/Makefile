@@ -6,7 +6,7 @@
 #    By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/30 12:48:29 by csnowbal          #+#    #+#              #
-#    Updated: 2020/05/10 12:50:37 by csnowbal         ###   ########.fr        #
+#    Updated: 2020/05/12 21:22:10 by csnowbal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,13 +22,13 @@ SRCB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c 
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJS = $(SRCS:%.c=%.o)
 OBJB = $(SRCB:%.c=%.o)
-COMP = gcc
+CC = gcc
 FlAG = -Wall -Wextra -Werror
 ARRC = ar rcs
 REMF = rm -f
 
 %.o : %.c $(HEAD)
-	$(COMP) $(FLAG) -c $< -o $@
+	$(CC) $(FLAG) -c $< -o $@
 
 all: $(NAME)
 

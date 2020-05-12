@@ -6,10 +6,9 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:10 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:06:11 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/12 19:55:03 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/ft_printf.h"
 
@@ -30,7 +29,7 @@ static int	ft_output_ptr(char *ptr, t_flags flags, size_t len)
 	return (count);
 }
 
-int		ft_view_ptr(unsigned long long nbr, t_flags flags)
+int			ft_view_ptr(unsigned long long nbr, t_flags flags)
 {
 	size_t	len;
 	char	*ptr;

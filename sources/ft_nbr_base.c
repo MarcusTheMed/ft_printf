@@ -6,14 +6,14 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:05:41 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:05:42 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/12 19:54:21 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/ft_printf.h"
 
-static char	*view_base(unsigned long long nbr_tmp, int base, char *str, int count)
+static char	*view_base(unsigned long long nbr_tmp, int base, char *str,
+						int count)
 {
 	while (nbr_tmp != 0)
 	{

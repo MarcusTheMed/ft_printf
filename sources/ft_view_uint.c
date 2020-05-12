@@ -6,10 +6,9 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:15 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:06:17 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/12 19:55:22 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/ft_printf.h"
 
@@ -46,7 +45,7 @@ static int	ft_put_uint(char *nbr_str, t_flags flags)
 	return (count);
 }
 
-int		ft_view_uint(unsigned int nbr, t_flags flags)
+int			ft_view_uint(unsigned int nbr, t_flags flags)
 {
 	char	*nbr_str;
 	int		count;
