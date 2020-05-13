@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:05:31 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 19:54:28 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/14 02:33:35 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int					ft_flag_scan(const char *input, int i, t_flags *flags,
 								va_list av);
 
 int					ft_spreader(int c, t_flags flags, va_list av);
-int					ft_view_width(int width, int minus, int zero);
 int					ft_type(int c);
 int					ft_flags(int c);
 
@@ -46,6 +45,7 @@ int					ft_view_uint(unsigned int nbr, t_flags flags);
 
 int					ft_putchar(int c);
 int					ft_putstr(char *str, int len);
+int					ft_output_width(int width, int minus, int zero);
 
 char				*ft_uns_itoa(unsigned int n);
 char				*ft_uns_itoa_base(unsigned long long nbr, int base);

@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:03 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 19:55:14 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/14 02:34:57 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_output_int(char *nbr_str, int nbr_tmp, t_flags flags, size_t len)
 	if (nbr_tmp < 0 && flags.dot >= 0)
 		ft_putchar('-');
 	if (flags.dot >= 0)
-		count += ft_view_width(flags.dot - 1, len - 1, 1);
+		count += ft_output_width(flags.dot - 1, len - 1, 1);
 	count += ft_putstr(nbr_str, len);
 	return (count);
 }
@@ -38,10 +38,10 @@ static int	ft_put_int(char *nbr_str, int nbr_tmp, t_flags flags)
 	if (flags.dot >= 0)
 	{
 		flags.width -= flags.dot;
-		count += ft_view_width(flags.width, 0, 0);
+		count += ft_output_width(flags.width, 0, 0);
 	}
 	else
-		count += ft_view_width(flags.width, len, flags.zero);
+		count += ft_output_width(flags.width, len, flags.zero);
 	if (flags.minus == 0)
 		count += ft_output_int(nbr_str, nbr_tmp, flags, len);
 	return (count);
@@ -57,7 +57,7 @@ int			ft_view_int(int nbr, t_flags flags)
 	nbr_tmp = nbr;
 	if (flags.dot == 0 && nbr == 0)
 	{
-		count += ft_view_width(flags.width, 0, 0);
+		count += ft_output_width(flags.width, 0, 0);
 		return (count);
 	}
 	if (nbr < 0 && (flags.dot >= 0 || flags.zero == 1))

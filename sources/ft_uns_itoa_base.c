@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 19:59:23 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 19:59:40 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 20:11:24 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_uns_itoa_base(unsigned long long nbr, int base)
 {
-	char				*str;
 	unsigned long long	nbr_tmp;
+	char				*str;
 	size_t				len;
 
 	len = 0;

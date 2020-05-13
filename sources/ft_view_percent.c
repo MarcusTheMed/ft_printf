@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 13:53:27 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 13:56:07 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/14 02:35:05 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_view_percent(t_flags flags)
 	count = 0;
 	if (flags.minus == 1)
 		count += ft_putchar('%');
-	count += ft_view_width(flags.width, 1, flags.zero);
+	count += ft_output_width(flags.width, 1, flags.zero);
 	if (flags.minus == 0)
 		count += ft_putchar('%');
 	return (count);

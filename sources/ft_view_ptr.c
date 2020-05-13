@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:10 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 19:55:39 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/14 02:35:18 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_output_ptr(char *ptr, t_flags flags, size_t len)
 	count += ft_putstr("0x", 2);
 	if (flags.dot >= 0)
 	{
-		count += ft_view_width(flags.dot, len, 1);
+		count += ft_output_width(flags.dot, len, 1);
 		count += ft_putstr(ptr, flags.dot);
 	}
 	else
@@ -38,15 +38,18 @@ int			ft_view_ptr(unsigned long long nbr, t_flags flags)
 	if (nbr == 0 && flags.dot == 0)
 	{
 		count += ft_putstr("0x", 2);
-		return (count += ft_view_width(flags.width, 0, 1));
+		return (count += ft_output_width(flags.width, 0, 1));
 	}
-	ptr = ft_str_tolower(ft_uns_itoa_base(nbr, 16));
+	if (nbr == 0 && flags.dot >= 0)
+		flags.width -= 1;
+	ptr = ft_uns_itoa_base(nbr, 16);
+	ptr = ft_str_tolower(ptr);
 	len = ft_strlen(ptr);
 	if ((size_t)flags.dot < len)
 		flags.dot = len;
 	if (flags.minus == 1)
 		count += ft_output_ptr(ptr, flags, len);
-	count += ft_view_width(flags.width, len + 2, 0);
+	count += ft_output_width(flags.width, len + 2, 0);
 	if (flags.minus == 0)
 		count += ft_output_ptr(ptr, flags, len);
 	free(ptr);

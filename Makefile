@@ -6,7 +6,7 @@
 #    By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/12 19:06:42 by csnowbal          #+#    #+#              #
-#    Updated: 2020/05/13 20:00:21 by csnowbal         ###   ########.fr        #
+#    Updated: 2020/05/14 02:32:46 by csnowbal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,7 @@ SRCS = sources/ft_output.c \
 		sources/ft_view_percent.c \
 		sources/ft_view_ptr.c \
 		sources/ft_view_str.c \
-		sources/ft_view_uint.c \
-		sources/ft_view_width.c
+		sources/ft_view_uint.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
 FLAGS = -Wall -Wextra -Werror

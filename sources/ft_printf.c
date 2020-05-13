@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:24 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 18:39:21 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/14 02:23:02 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,14 @@ int				ft_view_input(const char *input, va_list av)
 	while (input[i])
 	{
 		flags = ft_init_flags();
-		if (input[i] == '%' && input[i + 1] == '\0')
-			return (-1);
 		if (input[i] == '%' && input[i + 1])
 		{
 			i++;
 			i = ft_flag_scan(input, i, &flags, av);
 			if (ft_type(input[i]))
 				count += ft_spreader((char)flags.type, flags, av);
-			else if (input[i] && ft_putchar(input[i]))
-				return (-1);
+			else if (input[i])
+				count += ft_putchar(input[i]);
 		}
 		else if (input[i] != '%')
 			count += ft_putchar(input[i]);

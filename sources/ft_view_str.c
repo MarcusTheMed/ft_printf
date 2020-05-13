@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:12 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 22:01:10 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/14 02:35:26 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_output_str(char *str, t_flags flags, size_t len)
 	count = 0;
 	if (flags.dot >= 0)
 	{
-		count += ft_view_width(flags.dot, len, 0);
+		count += ft_output_width(flags.dot, len, 0);
 		count += ft_putstr(str, flags.dot);
 	}
 	else
@@ -43,9 +43,9 @@ int			ft_view_str(char *str, t_flags flags)
 	if (flags.minus == 1)
 		count += ft_output_str(str_1, flags, len);
 	if (flags.dot >= 0)
-		count += ft_view_width(flags.width, flags.dot, 0);
+		count += ft_output_width(flags.width, flags.dot, 0);
 	else
-		count += ft_view_width(flags.width, len, 0);
+		count += ft_output_width(flags.width, len, 0);
 	if (flags.minus == 0)
 		count += ft_output_str(str_1, flags, len);
 	free(str_1);

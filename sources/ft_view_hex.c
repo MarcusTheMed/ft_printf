@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:01 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 19:54:39 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/14 02:34:41 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_output_hex(char *hex, t_flags flags, size_t len)
 
 	count = 0;
 	if (flags.dot >= 0)
-		count += ft_view_width(flags.dot - 1, len - 1, 1);
+		count += ft_output_width(flags.dot - 1, len - 1, 1);
 	count += ft_putstr(hex, len);
 	return (count);
 }
@@ -36,10 +36,10 @@ static int	ft_put_hex(char *hex, t_flags flags)
 	if (flags.dot >= 0)
 	{
 		flags.width -= flags.dot;
-		count += ft_view_width(flags.width, 0, 0);
+		count += ft_output_width(flags.width, 0, 0);
 	}
 	else
-		count += ft_view_width(flags.width, len, flags.zero);
+		count += ft_output_width(flags.width, len, flags.zero);
 	if (flags.minus == 0)
 		count += ft_output_hex(hex, flags, len);
 	return (count);
@@ -53,7 +53,7 @@ int			ft_view_hex(unsigned int nbr, int lower, t_flags flags)
 	count = 0;
 	if (flags.dot == 0 && nbr == 0)
 	{
-		count += ft_view_width(flags.width, 0, 0);
+		count += ft_output_width(flags.width, 0, 0);
 		return (count);
 	}
 	hex = ft_uns_itoa_base((unsigned long long)nbr, 16);
