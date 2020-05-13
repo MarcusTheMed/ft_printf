@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:05:59 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:06:00 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 16:54:22 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_flags	ft_flag_digit(char c, t_flags flags)
 	return (flags);
 }
 
-t_flags	ft_flag_width(va_list av, t_flags flags)
+t_flags	ft_flag_width(t_flags flags, va_list av)
 {
 	flags.star = 1;
 	flags.width = va_arg(av, int);

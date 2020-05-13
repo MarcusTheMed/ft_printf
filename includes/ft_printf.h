@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:05:31 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 13:58:53 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 16:54:29 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char				*ft_uns_itoa(unsigned int n);
 char				*ft_nbr_base(unsigned long long nbr, int base);
 char				*ft_str_tolower(char *str);
 
-t_flags				ft_flag_width(va_list av, t_flags flags);
+t_flags				ft_flag_width(t_flags flags, va_list av);
 t_flags				ft_flag_minus(t_flags flags);
 t_flags				ft_flag_digit(char c, t_flags flags);
 int					ft_flag_dot(const char *input, int start, t_flags *flags,

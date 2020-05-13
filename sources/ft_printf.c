@@ -6,29 +6,11 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:24 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 14:42:44 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 17:08:57 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-/*
-** "0" Значение добавляет нули. При преобразованиях типа: d, i, o, u, x, X -
-** преобразуемое значение слева дополняется нулями (вместо пробелов).
-** Если присутствуют флаги 0, и -, то флаг 0 игнорируется. Если преобразование
-** указано точно (d, i, o, u, x и X), то флаг 0 игнорируется.
-**
-** "-" Выравнивает результат преобразования по левой границе поля.
-**(По умолчанию выравнивание выполняется справа.) Отменяет флаг 0.
-**
-** "*" Модификатор ширины.
-** Указывает минимальную ширину поля(включая знак для чисел).Если представление
-** величины больше, чем ширина поля, то запись выходит за пределы поля.
-**
-** "." Модификатор точности. Указывает на минимальное количество символов,
-** которое должно появиться при обработке типов d, i, o, u, x, X;
-** Максимальное число символов, которые будут выведены для типа s.
-*/
 
 t_flags			ft_init_flags(void)
 {
@@ -42,6 +24,18 @@ t_flags			ft_init_flags(void)
 	flags.zero = 0;
 	return (flags);
 }
+
+/*
+** Check all flags.
+** If not digit and not type and not flags -> break.
+** If '0' and flag width = 0 and flag minus = 0 -> flag zero = 1.
+** If '.' -> if '.*' -> flag dot = av(int), else scan digit -> flag dot = num.
+** If '-' -> flag minus = 1, flag zero = 0.
+** If '*' -> flag star = 1, flag width = av(int) -> if av(int) < 0 ->
+** -> flag minus = 1, flag width *= -1.
+** If digit -> if flag star = 1 -> flag width = 0 -> flag width = num.
+** If type -> flag type = type -> break.
+*/
 
 int				ft_flag_scan(const char *input, int i, t_flags *flags,
 								va_list av)
@@ -57,7 +51,7 @@ int				ft_flag_scan(const char *input, int i, t_flags *flags,
 		if (input[i] == '-')
 			*flags = ft_flag_minus(*flags);
 		if (input[i] == '*')
-			*flags = ft_flag_width(av, *flags);
+			*flags = ft_flag_width(*flags, av);
 		if (ft_isdigit(input[i]))
 			*flags = ft_flag_digit(input[i], *flags);
 		if (ft_type(input[i]))

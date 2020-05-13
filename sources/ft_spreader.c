@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_view.c                                          :+:      :+:    :+:   */
+/*   ft_spreader.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/12 19:06:21 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 13:58:26 by csnowbal         ###   ########.fr       */
+/*   Created: 2020/05/13 15:19:26 by csnowbal          #+#    #+#             */
+/*   Updated: 2020/05/13 16:21:48 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../includes/ft_printf.h"
 
@@ -25,7 +26,7 @@ int	ft_flags(int c)
 
 int	ft_spreader(int c, t_flags flags, va_list av)
 {
-	int			count;
+	int	count;
 
 	count = 0;
 	if (c == 'c')
@@ -37,7 +38,7 @@ int	ft_spreader(int c, t_flags flags, va_list av)
 	else if (c == 'd' || c == 'i')
 		count += ft_view_int(va_arg(av, int), flags);
 	else if (c == 'u')
-		count += ft_view_uint((unsigned int)va_arg(av, unsigned int), flags);
+		count += ft_view_uint(va_arg(av, unsigned int), flags);
 	else if (c == 'x')
 		count += ft_view_hex(va_arg(av, unsigned int), 1, flags);
 	else if (c == 'X')

@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:38 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 14:21:13 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 15:59:42 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <stdio.h>
 #include <limits.h>
 
-int		main(void)
+int	main(void)
 {
-	int		*tab = malloc(sizeof(int) * 10);
-	int		*tab2 = malloc(0);
+	int	*tab = malloc(sizeof(int) * 10);
+	int	*tab2 = malloc(0);
 
 	ft_printf("--------------------%%c--------------------\n");
 	printf("01) standart PRINTF : |%c|\n", 'a');
@@ -353,10 +353,10 @@ int		main(void)
 	ft_printf("03) my       PRINTF : |%.0%|\n");
 	// output -1
 	printf("04) standart PRINTF : |");
-	int a = printf("%Z");
+	int a = printf("kekw %Z");
 	printf("|\n");
 	ft_printf("04) my       PRINTF : |");
-	int b = ft_printf("%Z");
+	int b = ft_printf("kekw %Z");
 	ft_printf("|\n");
 	printf("05) standart PRINTF : |");
 	printf("%");

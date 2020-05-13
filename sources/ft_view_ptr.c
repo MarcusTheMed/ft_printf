@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:10 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 14:02:38 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 17:35:31 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,7 @@ int			ft_view_ptr(unsigned long long nbr, t_flags flags)
 		flags.dot = len;
 	if (flags.minus == 1)
 		count += ft_output_ptr(ptr, flags, len);
-	if (nbr)
-		count += ft_view_width(flags.width, len + 2, 0);
-	else
-		count += ft_view_width(flags.width, len, 0);
+	count += ft_view_width(flags.width, len + 2, 0);
 	if (flags.minus == 0)
 		count += ft_output_ptr(ptr, flags, len);
 	free(ptr);

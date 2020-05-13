@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:15 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 14:53:27 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 15:27:02 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_output_uint(char *nbr_str, t_flags flags, size_t len)
 {
-	int	count;
+	int		count;
 
 	count = 0;
 	if (flags.dot >= 0)

@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:01 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 14:53:23 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 17:29:46 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ static int	ft_put_hex(char *hex, t_flags flags)
 		count += ft_view_width(flags.width, 0, 0);
 	}
 	else
-		count += ft_view_width(flags.width,
-		len, flags.zero);
+		count += ft_view_width(flags.width, len, flags.zero);
 	if (flags.minus == 0)
 		count += ft_output_hex(hex, flags, len);
 	return (count);
