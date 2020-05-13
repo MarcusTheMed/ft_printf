@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:21 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 21:41:36 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 13:58:26 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_flags(int c)
 	return ((c == '-') || (c == ' ') || (c == '0') || (c == '.') || (c == '*'));
 }
 
-int	ft_view(int c, t_flags flags, va_list av)
+int	ft_spreader(int c, t_flags flags, va_list av)
 {
 	int			count;
 
@@ -43,6 +43,6 @@ int	ft_view(int c, t_flags flags, va_list av)
 	else if (c == 'X')
 		count += ft_view_hex(va_arg(av, unsigned int), 0, flags);
 	else if (c == '%')
-		count += ft_putchar('%');
+		count += ft_view_percent(flags);
 	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:05:31 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 22:05:53 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 13:58:53 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int					ft_view_input(const char *input, va_list av);
 int					ft_flag_scan(const char *input, int i, t_flags *flags,
 								va_list av);
 
-int					ft_view(int c, t_flags flags, va_list av);
+int					ft_spreader(int c, t_flags flags, va_list av);
 int					ft_view_width(int width, int minus, int zero);
 int					ft_type(int c);
 int					ft_flags(int c);
@@ -39,6 +39,7 @@ int					ft_flags(int c);
 int					ft_view_char(char c, t_flags flags);
 int					ft_view_hex(unsigned int nbr, int lower, t_flags flags);
 int					ft_view_int(int nbr, t_flags flags);
+int					ft_view_percent(t_flags flags);
 int					ft_view_ptr(unsigned long long nbr, t_flags flags);
 int					ft_view_str(char *str, t_flags flags);
 int					ft_view_uint(unsigned int nbr, t_flags flags);

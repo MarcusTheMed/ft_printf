@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:24 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 22:04:21 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 13:58:41 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ int				ft_flag_scan(const char *input, int i, t_flags *flags,
 	return (i);
 }
 
+/*
+** Check each element of the 'input'. Check % -> check flags -> check type ->
+** -> go to the spreader. If just symbol print it.
+*/
+
 int				ft_view_input(const char *input, va_list av)
 {
 	int			i;
@@ -88,7 +93,7 @@ int				ft_view_input(const char *input, va_list av)
 			i++;
 			i = ft_flag_scan(input, i, &flags, av);
 			if (ft_type(input[i]))
-				count += ft_view((char)flags.type, flags, av);
+				count += ft_spreader((char)flags.type, flags, av);
 			else if (input[i])
 				return (-1);
 		}

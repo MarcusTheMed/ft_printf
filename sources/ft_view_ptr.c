@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:10 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 21:58:04 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 14:02:38 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ static int	ft_output_ptr(char *ptr, t_flags flags, size_t len)
 	int		count;
 
 	count = 0;
-	if (ft_strncmp(ptr, "(nil)", 5) != 0)
-		count += ft_putstr("0x", 2);
+	count += ft_putstr("0x", 2);
 	if (flags.dot >= 0)
 	{
 		count += ft_view_width(flags.dot, len, 1);
@@ -36,10 +35,12 @@ int			ft_view_ptr(unsigned long long nbr, t_flags flags)
 	int		count;
 
 	count = 0;
-	if (!nbr)
-		ptr = ft_substr("(nil)", 0, 5);
-	else
-		ptr = ft_str_tolower(ft_nbr_base(nbr, 16));
+	if (nbr == 0 && flags.dot == 0)
+	{
+		count += ft_putstr("0x", 2);
+		return (count += ft_view_width(flags.width, 0, 1));
+	}
+	ptr = ft_str_tolower(ft_nbr_base(nbr, 16));
 	len = ft_strlen(ptr);
 	if ((size_t)flags.dot < len)
 		flags.dot = len;
