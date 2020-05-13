@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:24 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 14:10:07 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 14:42:44 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,8 @@ int				ft_printf(const char *input_str, ...)
 	int			count;
 
 	count = 0;
-	input = ft_strdup(input_str);
+	if(!(input = ft_strdup(input_str)))
+		return (-1);
 	va_start(av, input_str);
 	count += ft_view_input(input, av);
 	va_end(av);

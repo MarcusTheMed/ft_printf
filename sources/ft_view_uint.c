@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:15 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:55:22 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 14:53:27 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int			ft_view_uint(unsigned int nbr, t_flags flags)
 	int		count;
 
 	count = 0;
-	nbr = (unsigned int)(4294967295 + 1 + nbr);
 	if (flags.dot == 0 && nbr == 0)
 	{
 		count += ft_view_width(flags.width, 0, 0);
