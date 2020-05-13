@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:15 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 15:27:02 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 19:55:25 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int			ft_view_uint(unsigned int nbr, t_flags flags)
 		count += ft_view_width(flags.width, 0, 0);
 		return (count);
 	}
-	nbr_str = ft_uns_itoa(nbr);
+	nbr_str = ft_uns_itoa_base(nbr, 10);
 	count += ft_put_uint(nbr_str, flags);
 	free(nbr_str);
 	return (count);

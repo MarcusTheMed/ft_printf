@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:03 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:55:17 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 19:55:14 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int			ft_view_int(int nbr, t_flags flags)
 	if (nbr < 0 && (flags.dot >= 0 || flags.zero == 1))
 	{
 		if (flags.zero == 1 && flags.dot == -1)
-			ft_putstr("-", 1);
+			ft_putchar('-');
 		nbr *= -1;
 		flags.zero = 1;
 		flags.width--;

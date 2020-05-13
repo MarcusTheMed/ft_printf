@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:01 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 17:29:46 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 19:54:39 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int			ft_view_hex(unsigned int nbr, int lower, t_flags flags)
 		count += ft_view_width(flags.width, 0, 0);
 		return (count);
 	}
-	hex = ft_nbr_base((unsigned long long)nbr, 16);
+	hex = ft_uns_itoa_base((unsigned long long)nbr, 16);
 	if (lower == 1)
 		hex = ft_str_tolower(hex);
 	count += ft_put_hex(hex, flags);

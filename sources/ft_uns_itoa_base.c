@@ -1,50 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbr_base.c                                      :+:      :+:    :+:   */
+/*   ft_uns_itoa_base.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/12 19:05:41 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 19:54:21 by csnowbal         ###   ########.fr       */
+/*   Created: 2020/05/13 19:59:23 by csnowbal          #+#    #+#             */
+/*   Updated: 2020/05/13 19:59:40 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static char	*view_base(unsigned long long nbr_tmp, int base, char *str,
-						int count)
-{
-	while (nbr_tmp != 0)
-	{
-		if ((nbr_tmp % base) < 10)
-			str[count - 1] = (nbr_tmp % base) + 48;
-		else
-			str[count - 1] = (nbr_tmp % base) + 55;
-		nbr_tmp /= base;
-		count--;
-	}
-	return (str);
-}
-
-char		*ft_nbr_base(unsigned long long nbr, int base)
+char	*ft_uns_itoa_base(unsigned long long nbr, int base)
 {
 	char				*str;
 	unsigned long long	nbr_tmp;
-	int					count;
+	size_t				len;
 
-	count = 0;
+	len = 0;
 	nbr_tmp = nbr;
 	if (nbr == 0)
 		return (ft_strdup("0"));
+	while (nbr_tmp != 0)
+	{
+		nbr_tmp /= base;
+		len++;
+	}
+	if (!(str = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	str[len] = '\0';
 	while (nbr != 0)
 	{
+		str[len - 1] = (nbr % base) + (nbr % base > 9 ? 55 : 48);
 		nbr /= base;
-		count++;
+		len--;
 	}
-	if (!(str = malloc(sizeof(char) * (count + 1))))
-		return (0);
-	str[count] = '\0';
-	str = view_base(nbr_tmp, base, str, count);
 	return (str);
 }

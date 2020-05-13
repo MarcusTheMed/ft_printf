@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:38 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 15:59:42 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 19:11:26 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -372,5 +372,15 @@ int	main(void)
 	ft_printf("|\n\n");
 	ft_printf("return fr st PRINTF : %d\nreturn fr my PRINTF : %d\n\n", a, b);
 	ft_printf("%d\n", ft_printf("%d, ", ft_printf("kekw, ")));
+	ft_printf("--------------------%%kek------------------\n");
+	printf("01) standart PRINTF : |%.*s|\n", 5, "kekwait");
+	ft_printf("01) my       PRINTF : |%.*s|\n", 5, "kekwait");
+	printf("02) standart PRINTF : |%.*d|\n", 5, 5);
+	ft_printf("02) my       PRINTF : |%.*d|\n", 5, 5);
+
+	printf("03) standart PRINTF : |%-.4d|\n", 42);
+	ft_printf("03) my       PRINTF : |%-.4d|\n", 42);
+	printf("04) standart PRINTF : |%0.3s|\n", "42");
+	ft_printf("04) my       PRINTF : |%0.3s|\n", "42");
 	return (0);
 }

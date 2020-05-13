@@ -6,7 +6,7 @@
 #    By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/12 19:06:42 by csnowbal          #+#    #+#              #
-#    Updated: 2020/05/13 15:30:44 by csnowbal         ###   ########.fr        #
+#    Updated: 2020/05/13 20:00:21 by csnowbal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,11 @@ NAME = libftprintf.a
 HEAD = ./includes/ft_printf.h
 LIBFT = ./libft/libft.a
 LIBFT_DIR = ./libft
-SRCS = sources/ft_nbr_base.c \
-		sources/ft_output.c \
+SRCS = sources/ft_output.c \
 		sources/ft_printf.c \
 		sources/ft_spreader.c \
 		sources/ft_str_tolower.c \
-		sources/ft_uns_itoa.c \
+		sources/ft_uns_itoa_base.c \
 		sources/ft_view_char.c \
 		sources/ft_view_flags.c \
 		sources/ft_view_hex.c \
