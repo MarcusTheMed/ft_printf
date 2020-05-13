@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:38 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/12 21:53:09 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 14:21:13 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -353,10 +353,10 @@ int		main(void)
 	ft_printf("03) my       PRINTF : |%.0%|\n");
 	// output -1
 	printf("04) standart PRINTF : |");
-	printf("%Z");
+	int a = printf("%Z");
 	printf("|\n");
 	ft_printf("04) my       PRINTF : |");
-	ft_printf("%Z");
+	int b = ft_printf("%Z");
 	ft_printf("|\n");
 	printf("05) standart PRINTF : |");
 	printf("%");
@@ -368,8 +368,9 @@ int		main(void)
 	printf("%%%");
 	printf("|\n");
 	ft_printf("06) my       PRINTF : |");
-	int c = ft_printf("%%%");
+	ft_printf("%%%");
 	ft_printf("|\n\n");
-	ft_printf("return from  PRINTF : %d\n", c);
+	ft_printf("return fr st PRINTF : %d\nreturn fr my PRINTF : %d\n\n", a, b);
+	ft_printf("%d\n", ft_printf("%d, ", ft_printf("kekw, ")));
 	return (0);
 }

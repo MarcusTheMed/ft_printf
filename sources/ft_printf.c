@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:24 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/13 13:58:41 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/13 14:10:07 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,10 @@ int				ft_view_input(const char *input, va_list av)
 			if (ft_type(input[i]))
 				count += ft_spreader((char)flags.type, flags, av);
 			else if (input[i])
+			{
+				count += ft_putchar(input[i]);
 				return (-1);
+			}
 		}
 		else if (input[i] != '%')
 			count += ft_putchar(input[i]);
