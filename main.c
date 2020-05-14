@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:38 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/14 02:04:11 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/05/14 17:19:11 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -351,7 +351,6 @@ int	main(void)
 	ft_printf("02) my       PRINTF : |%-5%|\n");
 	printf("03) standart PRINTF : |%.0%|\n");
 	ft_printf("03) my       PRINTF : |%.0%|\n");
-	// output -1
 	printf("04) standart PRINTF : |");
 	printf("kekw %Z");
 	printf("|\n");
@@ -378,43 +377,11 @@ int	main(void)
 	printf("02) standart PRINTF : |%.*d|\n", 5, 5);
 	ft_printf("02) my       PRINTF : |%.*d|\n", 5, 5);
 
-	printf("03) standart PRINTF : |%-.4d|\n", 42);
-	ft_printf("03) my       PRINTF : |%-.4d|\n", 42);
+	printf("03) standart PRINTF : |%.d|\n", 0);
+	ft_printf("03) my       PRINTF : |%.*d|\n", 5, 0);
 	printf("04) standart PRINTF : |%0.3s|\n", "42");
 	ft_printf("04) my       PRINTF : |%0.3s|\n\n", "42");
 
-	printf("11) standart PRINTF : |%p|\n", NULL);
-	ft_printf("11) my       PRINTF : |%p|\n", NULL);
-	printf("12) standart PRINTF : |%10p|\n", NULL);
-	ft_printf("12) my       PRINTF : |%10p|\n", NULL);
-	printf("13) standart PRINTF : |%-10p|\n", NULL);
-	ft_printf("13) my       PRINTF : |%-10p|\n", NULL);
-	printf("14) standart PRINTF : |%.1p|\n", NULL);
-	ft_printf("14) my       PRINTF : |%.1p|\n", NULL);
-	printf("16) standart PRINTF : |%2.5p|\n", NULL);
-	ft_printf("16) my       PRINTF : |%2.5p|\n", NULL);
-
-
-	printf("15) standart PRINTF : |%10.2p|\n", NULL);
-	ft_printf("15) my       PRINTF : |%10.2p|\n", NULL);
-
-	printf("17) standart PRINTF : |%-10.2p|\n", NULL);
-	ft_printf("17) my       PRINTF : |%-10.2p|\n", NULL);
-
-	printf("24) Vrai PRINTF : |%.2s|\n", NULL);
-	ft_printf("24) Mon PRINTF  : |%.2s|\n", NULL);
-
-	printf("25) Vrai PRINTF : |%10.8s|\n", NULL);
-	ft_printf("25) Mon PRINTF  : |%10.8s|\n", NULL);
-
-	printf("26) Vrai PRINTF : |%10.2s|\n", NULL);
-	ft_printf("26) Mon PRINTF  : |%10.2s|\n", NULL);
-	printf("27) Vrai PRINTF : |%2.10s|\n", NULL);
-	ft_printf("27) Mon PRINTF  : |%2.10s|\n", NULL);
-
-	printf("28) Vrai PRINTF : |%2.5s|\n", NULL);
-	ft_printf("28) Mon PRINTF  : |%2.5s|\n", NULL);
-	printf("29) Vrai PRINTF : |%-10.2s|\n", NULL);
-	ft_printf("29) Mon PRINTF  : |%-10.2s|\n", NULL);
-	return (0);
+	printf("01) standart PRINTF : |%.3X|\n", 17);
+	ft_printf("01) my       PRINTF : |%.3X|\n", 17);
 }
