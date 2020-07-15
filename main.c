@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:38 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/14 17:19:11 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/07/09 14:31:49 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,8 +144,8 @@ int	main(void)
 	ft_printf("12) my       PRINTF : |%10p|\n", NULL);
 	printf("13) standart PRINTF : |%-10p|\n", NULL);
 	ft_printf("13) my       PRINTF : |%-10p|\n", NULL);
-	printf("14) standart PRINTF : |%.1p|\n", NULL);
-	ft_printf("14) my       PRINTF : |%.1p|\n", NULL);
+	printf("14) standart PRINTF : |%.1p|\n", tab);
+	ft_printf("14) my       PRINTF : |%.1p|\n", tab);
 	printf("15) standart PRINTF : |%10.2p|\n", NULL);
 	ft_printf("15) my       PRINTF : |%10.2p|\n", NULL);
 	printf("16) standart PRINTF : |%2.5p|\n", NULL);
@@ -384,4 +384,8 @@ int	main(void)
 
 	printf("01) standart PRINTF : |%.3X|\n", 17);
 	ft_printf("01) my       PRINTF : |%.3X|\n", 17);
+
+
+	printf("04) standart PRINTF : |%10p|\n", "-42");
+	ft_printf("04) my       PRINTF : |%10p|\n", "-42");
 }

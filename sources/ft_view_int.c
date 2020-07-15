@@ -6,7 +6,7 @@
 /*   By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:03 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/05/14 02:34:57 by csnowbal         ###   ########.fr       */
+/*   Updated: 2020/07/13 22:35:31 by csnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,29 +47,37 @@ static int	ft_put_int(char *nbr_str, int nbr_tmp, t_flags flags)
 	return (count);
 }
 
+static void	check_zero(t_flags *flags)
+{
+	if (flags->zero == 1 && flags->dot == -1)
+		ft_putchar('-');
+	flags->zero = 1;
+	flags->width--;
+}
+
 int			ft_view_int(int nbr, t_flags flags)
 {
 	char	*nbr_str;
 	int		nbr_tmp;
 	int		count;
+	long	nbr_long;
 
 	count = 0;
 	nbr_tmp = nbr;
+	nbr_long = 0;
 	if (flags.dot == 0 && nbr == 0)
-	{
-		count += ft_output_width(flags.width, 0, 0);
-		return (count);
-	}
+		return ((count += ft_output_width(flags.width, 0, 0)));
 	if (nbr < 0 && (flags.dot >= 0 || flags.zero == 1))
 	{
-		if (flags.zero == 1 && flags.dot == -1)
-			ft_putchar('-');
+		check_zero(&flags);
 		nbr *= -1;
-		flags.zero = 1;
-		flags.width--;
+		nbr == -2147483648 ? nbr_long = 2147483648 : nbr;
 		count++;
 	}
-	nbr_str = ft_itoa(nbr);
+	if (nbr_long)
+		nbr_str = ft_uns_itoa_base(nbr_long, 10);
+	else
+		nbr_str = ft_itoa(nbr);
 	count += ft_put_int(nbr_str, nbr_tmp, flags);
 	free(nbr_str);
 	return (count);

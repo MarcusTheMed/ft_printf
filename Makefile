@@ -6,7 +6,7 @@
 #    By: csnowbal <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/12 19:06:42 by csnowbal          #+#    #+#              #
-#    Updated: 2020/05/14 02:32:46 by csnowbal         ###   ########.fr        #
+#    Updated: 2020/07/13 23:02:45 by csnowbal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS = sources/ft_output.c \
 		sources/ft_view_uint.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 ARRC = ar rcs
 REMF = rm -f
 
